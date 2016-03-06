@@ -49,8 +49,9 @@ prompt_battery_lite() {
 
   local icon="BATTERY_ICON"
   set_default POWERLEVEL9K_BATTERY_LITE_FORCE_ICON false
+  set_default POWERLEVEL9K_AC_ICON 'ROOT_ICON'
   if [[ -n $connected ]]; then
-    [[ $current_state =~ charging || "$POWERLEVEL9K_BATTERY_LITE_FORCE_ICON" == true ]] && local icon="ROOT_ICON"
+    [[ $current_state =~ charging || "$POWERLEVEL9K_BATTERY_LITE_FORCE_ICON" == true ]] && local icon="AC_ICON"
   fi
 
   # Draw the prompt_segment
